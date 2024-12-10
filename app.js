@@ -8,9 +8,11 @@ let cors= require('cors');
 let bcrypt= require('bcrypt');
 let jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
+let connectdb=require('./config/db');
 
 
 dotenv.config();
+connectdb();
 
 PORT=3000;
 
