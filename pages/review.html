@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeSpace Reviews</title>
+    <link rel="stylesheet" href="../css/review.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Review Form Section -->
+        <section id="review-form-section">
+            <h2>Share Your Experience</h2>
+            <form id="review-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    
+                <label for="rating">Your Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="" disabled selected>Choose a rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+    
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" placeholder="Share your thoughts..." rows="5" required></textarea>
+    
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+    
+        <!-- Display Reviews Section -->
+        <section id="reviews-section">
+            <h2>What People Are Saying</h2>
+            <div id="reviews-container">
+                <!-- Dynamic Reviews will be displayed here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/review.js"></script>
+</body>
+</html>

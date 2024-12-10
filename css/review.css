@@ -1,0 +1,141 @@
+/* Reset and box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fbb1bd;
+    color: #eee;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Review Form Section */
+#review-form-section {
+    background: #fae0e4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#review-form-section h2 {
+    color: #0b132b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0b132b;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #f9bec7;
+    border: 1px solid #ff85a1;
+    color: #1f1f1f;
+    border-radius: 6px;
+}
+
+form button {
+    background: linear-gradient(135deg, #ff85a1, #ff99ac);
+    color: #333;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #ff99ac, #ff0a54);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px #0b132b;
+}
+
+/* Reviews Section */
+#reviews-section {
+    margin-top: 40px;
+}
+
+#reviews-section h2 {
+    font-size: 2rem;
+    color: #0b132b;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Reviews Container */
+#reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Testimonial */
+.testimonial {
+    background-color: #fae0e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+.testimonial img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.testimonial h3 {
+    color: #0b132b;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.testimonial p {
+    color: #0b132b;
+    margin-bottom: 15px;
+}
+
+.stars {
+    margin-top: 10px;
+}
+
+.stars .star {
+    color: #0b132b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
