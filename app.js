@@ -9,6 +9,9 @@ let bcrypt= require('bcrypt');
 let jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
 let connectdb=require('./config/db');
+let auth=require('./route/auth');
+
+
 
 
 dotenv.config();
@@ -42,6 +45,8 @@ app.use(cookieParser());
 
 
 app.use(cors());  
+
+app.use('/auth',auth);
 
 app.get('/',(req, res) => {
     res.render('index');
