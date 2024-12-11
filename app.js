@@ -31,11 +31,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
 
-// app.use(session({
-//   secret: process.env.SESSION_SECRET,   
-//   resave: false,             
-//   saveUninitialized: false,  
-// }));
+app.use(session({
+  secret: process.env.SESSION_SECRET,   
+  resave: false,             
+  saveUninitialized: false,  
+}));
 
 
 app.use(cookieParser());
@@ -45,6 +45,26 @@ app.use(cors());
 
 app.get('/',(req, res) => {
     res.render('index');
+})
+
+app.get('/login',(req, res) => {
+    res.render('login');
+})
+
+app.get('/sign',(req, res) => {
+    res.render('signup');
+})
+
+app.get('/team',(req, res) => {
+    res.render('team');
+})
+
+app.get('/contact',(req, res) => {
+    res.render('contact');
+})
+
+app.get('/review',(req, res) => {
+    res.render('review');
 })
 
 app.listen(PORT, () => {
