@@ -15,12 +15,12 @@
                 <span id="di-inner" class="material-symbols-outlined">light_mode</span>
               </span>
             </h2>
-            <form id="signup-form">
+            <form id="signup-form" method="post" action="/auth/register">
 
                 <input type="text" id="username" name="username" placeholder="Username">
                 <input type="email" id="email" name="email" placeholder="Email">
                 <input type="password" id="password" name="password" placeholder="Password">
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password">
+                <input type="password" id="confirm-password" name="confirmpassword" placeholder="Confirm Password">
                 <div>
                   <input type="submit" value="Sign Up">
                 </div>
@@ -38,7 +38,7 @@
                   <img draggable=false class="login-twitter" src="https://img.icons8.com/?size=100&id=yoQabS8l0qpr&format=png&color=000000" alt="" />
                 </div>
             </form>
-            <p>Already have an account? <a href="./login.html">Login</a></p>
+            <p>Already have an account? <a href="/login">Login</a></p>
         </div>
     </div>
 
