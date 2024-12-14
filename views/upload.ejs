@@ -4,172 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Upload Page</title>
-    <link rel="stylesheet" href="">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-        }
-        header nav ul li {
-            margin-right: 20px;
-        }
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .upload-section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .upload-btn {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .upload-btn:hover {
-            background-color: #444;
-        }
-        .drag-drop-area {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
-        .drag-drop-area p {
-            margin-bottom: 10px;
-        }
-        .media-type-selection {
-            margin-bottom: 20px;
-        }
-        .media-type-selection ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-        }
-        .media-type-selection li {
-            margin-right: 20px;
-        }
-        .media-type-selection a {
-            text-decoration: none;
-            color: #333;
-        }
-        .media-type-selection a.active {
-            color: #333;
-            font-weight: bold;
-        }
-        .media-upload-form {
-            margin-bottom: 20px;
-        }
-        .media-upload-form input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .media-upload-form select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .upload-progress {
-            margin-bottom: 20px;
-        }
-        .upload-progress progress {
-            width: 100%;
-            height: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .upload-progress p {
-            margin-bottom: 10px;
-        }
-        @media (max-width: 768px) {
-            .upload-section {
-                margin: 20px auto;
-            }
-        }
-        @media (max-width: 480px) {
-            .upload-section {
-                margin: 10px auto;
-            }
-            .media-type-selection ul {
-                flex-direction: column;
-            }
-            .media-type-selection li {
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/public/css/upload.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="../pages/login.html">Logout</a></li>
-            </ul>
+            <a href="/">
+                <span class="logo-text">VibeSpace</span>
+            </a>
         </nav>
     </header>
     <main>
         <section class="upload-section">
-            <button class="upload-btn">Upload Media</button>
-            <div class="drag-drop-area">
-                <p>Drag and drop files or click to browse</p>
-                <input type="file" id="file-input" multiple>
-            </div>
             <div class="media-type-selection">
                 <ul>
-                    <li><a href="#" class="active">Photos</a></li>
-                    <li><a href="#">Videos</a></li>
-                    <li><a href="#">Audio</a></li>
-                    <li><a href="#">Stories</a></li>
+                    <li><a href="#" class="active">DETAILS</a></li>
                 </ul>
             </div>
             <form class="media-upload-form">
-                <input type="text" id="caption" placeholder="Caption">
-                <input type="text" id="tags" placeholder="Tags">
-                <input type="text" id="location" placeholder="Location">
+                <input type="text" id="caption" placeholder="Name of the Host">
+                <input type="text" id="tags" placeholder="Event Name">
+                <input type="text" id="location" placeholder="Description">
+                <input type="text" id="tags" placeholder="Address of the Venue">
+                <input type="text" id="location" placeholder="Contact No.">
                 <select id="privacy">
                     <option value="public">Public</option>
                     <option value="private">Private</option>
-                    <option value="custom">Custom</option>
                 </select>
-                <button class="upload-btn">Upload</button>
+        
             </form>
-            <div class="upload-progress">
-                <progress id="upload-progress" value="0" max="100"></progress>
-                <p id="upload-progress-text">0% uploaded</p>
+            <div class="uploader">
+                <label for="fileInput">Choose a file</label>
+                <input type="file" id="fileInput" />
+                <div class="file-name" id="fileName">No file chosen</div>
+               
             </div>
+            <button class="upload-btn">Upload</button>
         </section>
     </main>
     <script src="../js/upload.js"></script>

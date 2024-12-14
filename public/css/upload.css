@@ -2,43 +2,57 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(45deg, #ff85a1, #f9bec7);
 }
 
 header {
-    background-color: #333;
     color: #fff;
     padding: 1em;
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+nav a {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #0b132b, #ff0a54);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px #0b132b;
 }
-
-nav li {
-    margin-right: 20px;
+  
+nav a:hover {
+    text-shadow: 2px 2px 8px #ff0a54; 
 }
 
 .upload-section {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background: linear-gradient(135deg, #fae0e4, #fff);
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .upload-btn {
-    background-color: #4CAF50;
-    color: #fff;
+    background: linear-gradient(135deg, #ff99ac, #f9bec7);
+    font-size: 16px;
+    color: #0b132b;
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+    transition: all 0.4s ease;
+    position: relative;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.upload-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #0b132b;
+    background: linear-gradient(135deg, #ff99ac, #ff0a54);
 }
 
 .drag-drop-area {
@@ -70,7 +84,8 @@ nav li {
 }
 
 .media-type-selection a.active {
-    color: #4CAF50;
+    color: #0b132b;
+    font-weight: 600;
 }
 
 .media-upload-form {
@@ -91,20 +106,64 @@ nav li {
     border: 1px solid #ccc;
 }
 
+.uploader {
+    background: white;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.uploader input[type="file"] {
+    display: none;
+}
+
+.uploader label {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.uploader label:hover {
+    background-color: #0056b3;
+}
+
+.file-name {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
 .upload-progress {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .upload-progress progress {
     width: 100%;
-    height: 20px;
+    appearance: none;
+    height: 10px;
     border: none;
+    background: #e0e0e0;
     border-radius: 5px;
-    background-color: #4CAF50;
+    overflow: hidden;
 }
 
-.upload -progress p {
+.upload-progress progress::-webkit-progress-bar {
+    background: #e0e0e0;
+}
+
+.upload-progress progress::-webkit-progress-value {
+    background: #007BFF;
+    transition: width 0.3s ease;
+}
+
+.upload-progress p {
     margin-top: 10px;
     font-size: 14px;
-    color: #333;
+    color: #555;
 }
