@@ -1,24 +1,35 @@
-const fileInput = document.getElementById('file-input');
-const uploadBtn = document.getElementById('upload-btn');
-const uploadProgress = document.getElementById('upload-progress');
-const uploadProgressText = document.getElementById('upload-progress-text');
+document.addEventListener("DOMContentLoaded", () => {
+    const fileInput = document.getElementById("fileInput");
+    const fileNameDisplay = document.getElementById("fileName");
+    const progressBar = document.getElementById("upload-progress");
+    const progressText = document.getElementById("upload-progress-text");
 
-uploadBtn.addEventListener('click', () => {
-    // Upload media logic here
-    // For demonstration purposes, simulate an upload progress
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += 10;
-        uploadProgress.value = progress;
-        uploadProgressText.textContent = `${progress}% uploaded`;
-        if (progress === 100) {
-            clearInterval(interval);
-            alert('Media uploaded successfully!');
+    // Function to update the file name display
+    fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            fileNameDisplay.textContent = file.name;
+            startUploadSimulation(); // Start the upload simulation
+        } else {
+            fileNameDisplay.textContent = "No file chosen";
         }
-    }, 1000);
-});
+    });
 
-fileInput.addEventListener('change', () => {
-    // Handle file input change event
-    console.log('File input changed:', fileInput.files);
+    // Function to simulate upload progress
+    function startUploadSimulation() {
+        let progress = 0;
+        progressBar.value = 0;
+        progressText.textContent = "0% uploaded";
+
+        const interval = setInterval(() => {
+            progress += 10;
+            progressBar.value = progress;
+            progressText.textContent = `${progress}% uploaded`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                progressText.textContent = "Upload complete!";
+            }
+        }, 200); // Update every 200ms
+    }
 });
