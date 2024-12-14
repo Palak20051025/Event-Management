@@ -46,6 +46,9 @@ app.use(cookieParser());
 
 app.use(cors());  
 
+// app.use("/uploads", express.static("uploads"));
+
+// app.use("/api/upload", uploadRoutes);
 app.use('/auth',auth);
 
 app.get('/',(req, res) => {
@@ -72,6 +75,27 @@ app.get('/review',(req, res) => {
     res.render('review');
 })
 
+app.get('/upload',(req, res) => {
+    res.render('upload');
+})
+
+const isLoggedIn = (req, res, next) => {
+    try {
+      if (!req.cookies.token || req.cookies.token === "") {
+        return res.redirect("/login");
+      }
+      const data = jwt.verify(req.cookies.token, process.env.JWT_TOKEN);
+      req.user = data;
+      next();
+    } catch (error) {
+      console.error("Authentication error:", error.message);
+      return res.redirect("/login");
+    }
+  };
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
+
