@@ -342,24 +342,6 @@ body {
   margin-bottom: 30px;
 }
 
-.btn-explore {
-  background: linear-gradient(135deg, #ff99ac, #f9bec7);
-  padding: 12px 25px;
-  border-radius: 50px;
-  font-size: 16px;
-  color: #0b132b;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.btn-explore:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px #0b132b;
-  background: linear-gradient(135deg, #ff99ac, #ff0a54);
-}
-
 .about-section::before {
   content: "";
   position: absolute;
@@ -467,6 +449,26 @@ body {
   flex-wrap: wrap;
 }
 
+#past-explore-btn {
+  background: linear-gradient(135deg, #ff99ac, #f9bec7);
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #0b132b;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+  transition: all 0.4s ease;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: -80px;
+}
+
+#past-explore-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px #0b132b;
+  background: linear-gradient(135deg, #ff99ac, #ff0a54);
+}
+
 .explore-card {
   width: 300px;
   background: #feeaed;
@@ -519,6 +521,26 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
+}
+
+#upcoming-explore-btn {
+  background: linear-gradient(135deg, #ff99ac, #f9bec7);
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #0b132b;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+  transition: all 0.4s ease;
+  position: absolute;
+  margin-top: 30px ;
+  margin-left: -80px;
+}
+
+#upcoming-explore-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px #0b132b;
+  background: linear-gradient(135deg, #ff99ac, #ff0a54);
 }
 
 /* Event Card Styles */
