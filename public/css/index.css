@@ -274,7 +274,6 @@ body {
   }
 }
 
-
 /* --- About section start ----*/
 
 .about-section {
@@ -684,7 +683,7 @@ footer {
 }
 
 .fsaperator-0{
-  background: url("../res/shapeDivider.svg") center/cover;
+  background: url("/public/images/res/shapeDivider.svg") center/cover;
   height: 10vw;
 }
 
@@ -705,14 +704,6 @@ footer {
   margin: 5px;
 }
 
-
-/* .footer-01 .fab:hover{
-  color: #d0d0d0;
-} */
-
-.footer-social .fa-twitter:hover{
-  color:#1EA1F2;
-}
 .footer-social .fa-facebook-f:hover{
   /* color: #0766FF; */
   color: #15A9FC;
@@ -723,12 +714,6 @@ footer {
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.footer-social .fa-github:hover{
-  color: #d0d0d0;
-}
-.footer-social .fa-linkedin:hover{
-  color: #2364AD;
 }
 
 .ficon{
