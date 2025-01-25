@@ -94,17 +94,28 @@ nav a:hover {
 }
 
 .media-upload-form input[type="text"] {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
 }
 
 .media-upload-form select {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
+}
+
+.date-select{
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #777;
+    font-weight: 300;
+    font-size: 14px;
 }
 
 .uploader {
@@ -139,32 +150,4 @@ nav a:hover {
     color: #555;
 }
 
-.upload-progress {
-    margin-top: 20px;
-    text-align: center;
-}
 
-.upload-progress progress {
-    width: 100%;
-    appearance: none;
-    height: 10px;
-    border: none;
-    background: #e0e0e0;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.upload-progress progress::-webkit-progress-bar {
-    background: #e0e0e0;
-}
-
-.upload-progress progress::-webkit-progress-value {
-    background: #007BFF;
-    transition: width 0.3s ease;
-}
-
-.upload-progress p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-}
