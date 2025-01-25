@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 let connectdb=require('./config/db');
 let auth=require('./route/auth');
 let review= require('./route/review');
+let upload= require('./route/upload');
 
 
 
@@ -53,6 +54,7 @@ app.use(cors());
 app.use('/auth',auth);
 
 app.use('/review',review);
+app.use('/new',upload)
 
 app.get('/',(req, res) => {
     res.render('index');
