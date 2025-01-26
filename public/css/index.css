@@ -88,6 +88,10 @@ body {
   margin-left: 2rem;
 }
 
+.nav-links #bookings{
+  display: none;
+}
+
 .nav-links a {
   color: #0b132b;
   text-decoration: none;
