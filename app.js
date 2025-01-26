@@ -13,6 +13,20 @@ let auth=require('./route/auth');
 let review= require('./route/review');
 let upload= require('./route/upload');
 
+const isLoggedIn = (req, res, next) => {
+  try {
+    if (!req.cookies.token || req.cookies.token === "") {
+      return res.redirect("/login");
+    }
+    const data = jwt.verify(req.cookies.token, process.env.JWT_TOKEN);
+    req.user = data;
+    next();
+  } catch (error) {
+    console.error("Authentication error:", error.message);
+    return res.redirect("/login");
+  }
+};
+
 
 
 
@@ -80,25 +94,11 @@ app.get('/review',(req, res) => {
     res.render('review');
 })
 
-app.get('/upload',(req, res) => {
+app.get('/upload',isLoggedIn,(req, res) => {
     res.render('upload');
 })
 
-const isLoggedIn = (req, res, next) => {
-    try {
-      if (!req.cookies.token || req.cookies.token === "") {
-        return res.redirect("/login");
-      }
-      const data = jwt.verify(req.cookies.token, process.env.JWT_TOKEN);
-      req.user = data;
-      next();
-    } catch (error) {
-      console.error("Authentication error:", error.message);
-      return res.redirect("/login");
-    }
-  };
 
-  //jdjhiuld
 
 
 

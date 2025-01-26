@@ -28,12 +28,16 @@ const eventSchema = new mongoose.Schema(
     privacy: {
       type: String,
       enum: ['public', 'private'],
-      default: 'public'
+      default: 'private'
     },
     photo: {
       type: String,
       required: true
-    }
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
   },
   { timestamps: true } 
 );
